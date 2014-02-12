@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface BeaconBroadcaster : NSObject
+@interface BeaconBroadcaster : NSObject<CBPeripheralManagerDelegate>
+
+@property (strong, nonatomic) CLBeaconRegion *myBeaconRegion;
+@property (strong, nonatomic) NSDictionary *myBeaconData;
+@property (strong, nonatomic) CBPeripheralManager *peripheralManager;
+@property BOOL isBroadcasting;
+
+- (void)startBroadcasting;
+- (void)stopBroadcasting;
 
 @end

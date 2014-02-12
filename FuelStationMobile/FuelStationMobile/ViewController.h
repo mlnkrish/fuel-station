@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "CurrentViewHolder.h"
+#import "BeaconAwareViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : BeaconAwareViewController<CLLocationManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *status;
 
 @end

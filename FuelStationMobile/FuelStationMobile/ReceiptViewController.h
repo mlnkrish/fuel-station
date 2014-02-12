@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrentViewHolder.h"
+#import "BeaconAwareViewController.h"
 
-@interface ReceiptViewController : UIViewController
+@interface ReceiptViewController : BeaconAwareViewController
 
 @end

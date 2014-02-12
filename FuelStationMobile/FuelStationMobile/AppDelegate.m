@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "BeaconDetector.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.detector = [[BeaconDetector alloc] init];
+    [self.detector startMonitoring];
     return YES;
 }
 							

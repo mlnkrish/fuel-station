@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <TSMessage.h>
+#import "CurrentViewHolder.h"
 
-@interface BeaconDetector : NSObject
+@interface BeaconDetector : NSObject<CLLocationManagerDelegate>
+
+@property CLBeaconRegion *beaconRegion;
+@property CLLocationManager *locationManager;
+@property NSUUID *uuid;
+@property BOOL isMonitoring;
+
+- (void)startMonitoring;
 
 @end

@@ -23,6 +23,14 @@
 		0B72D4B418A8A6FA001D818E /* FuelStationMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B72D4B318A8A6FA001D818E /* FuelStationMobileTests.m */; };
 		0B72D4BE18A8A710001D818E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72D4BD18A8A710001D818E /* CoreBluetooth.framework */; };
 		0B72D4C018A8A71A001D818E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72D4BF18A8A71A001D818E /* CoreLocation.framework */; };
+		0B72D50C18A8AEEC001D818E /* BeaconDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B72D50B18A8AEEC001D818E /* BeaconDetector.m */; };
+		0BAA6A9818AA28B800BC923C /* FillupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA6A9718AA28B800BC923C /* FillupViewController.m */; };
+		0BAA6A9B18AA291F00BC923C /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA6A9A18AA291F00BC923C /* PaymentViewController.m */; };
+		0BAA6A9E18AA292F00BC923C /* ReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA6A9D18AA292F00BC923C /* ReceiptViewController.m */; };
+		0BAA6AA218AA40D300BC923C /* BeaconBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA6AA118AA40D300BC923C /* BeaconBroadcaster.m */; };
+		0BC535B518AB567000611944 /* CurrentViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535B418AB567000611944 /* CurrentViewHolder.m */; };
+		0BC535B918AB626100611944 /* BeaconAwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535B818AB626100611944 /* BeaconAwareViewController.m */; };
+		69EEAFE801D64686B3CD6047 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFFE58CB13748FB97F181E1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,22 @@
 		0B72D4B318A8A6FA001D818E /* FuelStationMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelStationMobileTests.m; sourceTree = "<group>"; };
 		0B72D4BD18A8A710001D818E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		0B72D4BF18A8A71A001D818E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0B72D50A18A8AEEC001D818E /* BeaconDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetector.h; sourceTree = "<group>"; };
+		0B72D50B18A8AEEC001D818E /* BeaconDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconDetector.m; sourceTree = "<group>"; };
+		0BAA6A9618AA28B800BC923C /* FillupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillupViewController.h; sourceTree = "<group>"; };
+		0BAA6A9718AA28B800BC923C /* FillupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillupViewController.m; sourceTree = "<group>"; };
+		0BAA6A9918AA291F00BC923C /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		0BAA6A9A18AA291F00BC923C /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		0BAA6A9C18AA292F00BC923C /* ReceiptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptViewController.h; sourceTree = "<group>"; };
+		0BAA6A9D18AA292F00BC923C /* ReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptViewController.m; sourceTree = "<group>"; };
+		0BAA6AA018AA40D300BC923C /* BeaconBroadcaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconBroadcaster.h; sourceTree = "<group>"; };
+		0BAA6AA118AA40D300BC923C /* BeaconBroadcaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconBroadcaster.m; sourceTree = "<group>"; };
+		0BC535B318AB567000611944 /* CurrentViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentViewHolder.h; sourceTree = "<group>"; };
+		0BC535B418AB567000611944 /* CurrentViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentViewHolder.m; sourceTree = "<group>"; };
+		0BC535B718AB626100611944 /* BeaconAwareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconAwareViewController.h; sourceTree = "<group>"; };
+		0BC535B818AB626100611944 /* BeaconAwareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAwareViewController.m; sourceTree = "<group>"; };
+		2EBDF587A7354A38ACBC14C7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6BFFE58CB13748FB97F181E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +93,7 @@
 				0B72D48B18A8A6FA001D818E /* CoreGraphics.framework in Frameworks */,
 				0B72D48D18A8A6FA001D818E /* UIKit.framework in Frameworks */,
 				0B72D48918A8A6FA001D818E /* Foundation.framework in Frameworks */,
+				69EEAFE801D64686B3CD6047 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +117,7 @@
 				0B72D4AD18A8A6FA001D818E /* FuelStationMobileTests */,
 				0B72D48718A8A6FA001D818E /* Frameworks */,
 				0B72D48618A8A6FA001D818E /* Products */,
+				2EBDF587A7354A38ACBC14C7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +139,7 @@
 				0B72D48A18A8A6FA001D818E /* CoreGraphics.framework */,
 				0B72D48C18A8A6FA001D818E /* UIKit.framework */,
 				0B72D4A718A8A6FA001D818E /* XCTest.framework */,
+				6BFFE58CB13748FB97F181E1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,11 +147,11 @@
 		0B72D48E18A8A6FA001D818E /* FuelStationMobile */ = {
 			isa = PBXGroup;
 			children = (
+				0B72D50918A8AE6D001D818E /* Helpers */,
 				0B72D49718A8A6FA001D818E /* AppDelegate.h */,
 				0B72D49818A8A6FA001D818E /* AppDelegate.m */,
-				0B72D49A18A8A6FA001D818E /* Main.storyboard */,
-				0B72D49D18A8A6FA001D818E /* ViewController.h */,
-				0B72D49E18A8A6FA001D818E /* ViewController.m */,
+				0B72D50818A8AE2C001D818E /* Views */,
+				0B72D50718A8AE15001D818E /* Controllers */,
 				0B72D4A018A8A6FA001D818E /* Images.xcassets */,
 				0B72D48F18A8A6FA001D818E /* Supporting Files */,
 			);
@@ -160,6 +187,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0B72D50718A8AE15001D818E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BAA6A9618AA28B800BC923C /* FillupViewController.h */,
+				0BAA6A9718AA28B800BC923C /* FillupViewController.m */,
+				0B72D49D18A8A6FA001D818E /* ViewController.h */,
+				0B72D49E18A8A6FA001D818E /* ViewController.m */,
+				0BAA6A9918AA291F00BC923C /* PaymentViewController.h */,
+				0BAA6A9A18AA291F00BC923C /* PaymentViewController.m */,
+				0BAA6A9C18AA292F00BC923C /* ReceiptViewController.h */,
+				0BAA6A9D18AA292F00BC923C /* ReceiptViewController.m */,
+				0BC535B718AB626100611944 /* BeaconAwareViewController.h */,
+				0BC535B818AB626100611944 /* BeaconAwareViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0B72D50818A8AE2C001D818E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B72D49A18A8A6FA001D818E /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0B72D50918A8AE6D001D818E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0B72D50A18A8AEEC001D818E /* BeaconDetector.h */,
+				0B72D50B18A8AEEC001D818E /* BeaconDetector.m */,
+				0BAA6AA018AA40D300BC923C /* BeaconBroadcaster.h */,
+				0BAA6AA118AA40D300BC923C /* BeaconBroadcaster.m */,
+				0BC535B318AB567000611944 /* CurrentViewHolder.h */,
+				0BC535B418AB567000611944 /* CurrentViewHolder.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B72D4B718A8A6FA001D818E /* Build configuration list for PBXNativeTarget "FuelStationMobile" */;
 			buildPhases = (
+				D5637A57A2B340A2814AB541 /* Check Pods Manifest.lock */,
 				0B72D48118A8A6FA001D818E /* Sources */,
 				0B72D48218A8A6FA001D818E /* Frameworks */,
 				0B72D48318A8A6FA001D818E /* Resources */,
+				0B45D965B6D44062AAF45EBE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,12 +322,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B45D965B6D44062AAF45EBE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5637A57A2B340A2814AB541 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0B72D48118A8A6FA001D818E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BAA6AA218AA40D300BC923C /* BeaconBroadcaster.m in Sources */,
+				0BC535B918AB626100611944 /* BeaconAwareViewController.m in Sources */,
+				0BAA6A9818AA28B800BC923C /* FillupViewController.m in Sources */,
+				0BAA6A9E18AA292F00BC923C /* ReceiptViewController.m in Sources */,
 				0B72D49F18A8A6FA001D818E /* ViewController.m in Sources */,
+				0B72D50C18A8AEEC001D818E /* BeaconDetector.m in Sources */,
+				0BC535B518AB567000611944 /* CurrentViewHolder.m in Sources */,
+				0BAA6A9B18AA291F00BC923C /* PaymentViewController.m in Sources */,
 				0B72D49918A8A6FA001D818E /* AppDelegate.m in Sources */,
 				0B72D49518A8A6FA001D818E /* main.m in Sources */,
 			);
@@ -386,28 +493,34 @@
 		};
 		0B72D4B818A8A6FA001D818E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EBDF587A7354A38ACBC14C7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FuelStationMobile/FuelStationMobile-Prefix.pch";
 				INFOPLIST_FILE = "FuelStationMobile/FuelStationMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		0B72D4B918A8A6FA001D818E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EBDF587A7354A38ACBC14C7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FuelStationMobile/FuelStationMobile-Prefix.pch";
 				INFOPLIST_FILE = "FuelStationMobile/FuelStationMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -473,6 +586,7 @@
 				0B72D4B918A8A6FA001D818E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B72D4BA18A8A6FA001D818E /* Build configuration list for PBXNativeTarget "FuelStationMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +595,7 @@
 				0B72D4BC18A8A6FA001D818E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

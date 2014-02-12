@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -17,7 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.status.text = @"Hellos";
+    [CurrentViewHolder set:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,5 +27,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) beaconDetected:(CLBeacon *)beacon {
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"fillup"];
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [CurrentViewHolder set:self];
+}
+
 
 @end

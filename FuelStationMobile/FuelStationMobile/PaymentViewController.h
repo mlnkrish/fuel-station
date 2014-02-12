@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrentViewHolder.h"
+#import "BeaconAwareViewController.h"
 
-@interface PaymentViewController : UIViewController
+
+@interface PaymentViewController : BeaconAwareViewController
 
 @end
