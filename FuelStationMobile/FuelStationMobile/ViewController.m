@@ -29,8 +29,10 @@
 }
 
 - (void) beaconDetected:(CLBeacon *)beacon {
-    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"fillup"];
-    [[self navigationController] pushViewController:vc animated:YES];
+    if(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"fillup"];
+        [[self navigationController] pushViewController:vc animated:YES];
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated {

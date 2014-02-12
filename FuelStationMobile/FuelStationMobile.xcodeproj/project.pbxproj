@@ -30,6 +30,7 @@
 		0BAA6AA218AA40D300BC923C /* BeaconBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA6AA118AA40D300BC923C /* BeaconBroadcaster.m */; };
 		0BC535B518AB567000611944 /* CurrentViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535B418AB567000611944 /* CurrentViewHolder.m */; };
 		0BC535B918AB626100611944 /* BeaconAwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535B818AB626100611944 /* BeaconAwareViewController.m */; };
+		0BC535BC18AB839900611944 /* BeaconAdvertisementData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535BB18AB839900611944 /* BeaconAdvertisementData.m */; };
 		69EEAFE801D64686B3CD6047 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFFE58CB13748FB97F181E1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		0BC535B418AB567000611944 /* CurrentViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentViewHolder.m; sourceTree = "<group>"; };
 		0BC535B718AB626100611944 /* BeaconAwareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconAwareViewController.h; sourceTree = "<group>"; };
 		0BC535B818AB626100611944 /* BeaconAwareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAwareViewController.m; sourceTree = "<group>"; };
+		0BC535BA18AB839900611944 /* BeaconAdvertisementData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconAdvertisementData.h; sourceTree = "<group>"; };
+		0BC535BB18AB839900611944 /* BeaconAdvertisementData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAdvertisementData.m; sourceTree = "<group>"; };
 		2EBDF587A7354A38ACBC14C7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6BFFE58CB13748FB97F181E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,6 +224,8 @@
 				0BAA6AA118AA40D300BC923C /* BeaconBroadcaster.m */,
 				0BC535B318AB567000611944 /* CurrentViewHolder.h */,
 				0BC535B418AB567000611944 /* CurrentViewHolder.m */,
+				0BC535BA18AB839900611944 /* BeaconAdvertisementData.h */,
+				0BC535BB18AB839900611944 /* BeaconAdvertisementData.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				0BAA6A9B18AA291F00BC923C /* PaymentViewController.m in Sources */,
 				0B72D49918A8A6FA001D818E /* AppDelegate.m in Sources */,
 				0B72D49518A8A6FA001D818E /* main.m in Sources */,
+				0BC535BC18AB839900611944 /* BeaconAdvertisementData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

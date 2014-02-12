@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "CurrentViewHolder.h"
 #import "BeaconAwareViewController.h"
+#import "BeaconBroadcaster.h"
 
 @interface ViewController : BeaconAwareViewController<CLLocationManagerDelegate>
 
