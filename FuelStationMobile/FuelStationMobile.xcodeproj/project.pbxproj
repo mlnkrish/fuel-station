@@ -32,6 +32,7 @@
 		0BC535B918AB626100611944 /* BeaconAwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535B818AB626100611944 /* BeaconAwareViewController.m */; };
 		0BC535BC18AB839900611944 /* BeaconAdvertisementData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535BB18AB839900611944 /* BeaconAdvertisementData.m */; };
 		69EEAFE801D64686B3CD6047 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFFE58CB13748FB97F181E1 /* libPods.a */; };
+		B730EB0B03D9FA4DEEBE3590 /* CurrentUserHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B730ED556C077BD33D541B98 /* CurrentUserHolder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		0BC535BB18AB839900611944 /* BeaconAdvertisementData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAdvertisementData.m; sourceTree = "<group>"; };
 		2EBDF587A7354A38ACBC14C7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6BFFE58CB13748FB97F181E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B730E70D0B606C1368FAAC87 /* CurrentUserHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserHolder.h; sourceTree = "<group>"; };
+		B730ED556C077BD33D541B98 /* CurrentUserHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserHolder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,8 @@
 				0BC535B418AB567000611944 /* CurrentViewHolder.m */,
 				0BC535BA18AB839900611944 /* BeaconAdvertisementData.h */,
 				0BC535BB18AB839900611944 /* BeaconAdvertisementData.m */,
+				B730ED556C077BD33D541B98 /* CurrentUserHolder.m */,
+				B730E70D0B606C1368FAAC87 /* CurrentUserHolder.h */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				0B72D49918A8A6FA001D818E /* AppDelegate.m in Sources */,
 				0B72D49518A8A6FA001D818E /* main.m in Sources */,
 				0BC535BC18AB839900611944 /* BeaconAdvertisementData.m in Sources */,
+				B730EB0B03D9FA4DEEBE3590 /* CurrentUserHolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +516,7 @@
 				INFOPLIST_FILE = "FuelStationMobile/FuelStationMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -527,6 +534,7 @@
 				INFOPLIST_FILE = "FuelStationMobile/FuelStationMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

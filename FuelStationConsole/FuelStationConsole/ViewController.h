@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "CurrentViewHolder.h"
+#import "BeaconAwareViewController.h"
+#import "BeaconBroadcaster.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : BeaconAwareViewController
 
 @end

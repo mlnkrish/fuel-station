@@ -7,15 +7,15 @@
         <!--Navigation Controller-->
         <scene sceneID="WKW-hV-dmm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h5m-9t-u27" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="home" definesPresentationContext="YES" id="jYX-hK-TZL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kan-PY-Qmd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="3Xu-H4-9hI"/>
+                        <segue destination="Yt1-Og-G1p" kind="relationship" relationship="rootViewController" id="Jv9-Oz-XAv"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5m-9t-u27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-210" y="28"/>
         </scene>
@@ -67,26 +67,29 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello &lt;User>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcD-DV-ncc">
-                                <rect key="frame" x="33" y="150" width="271" height="28"/>
+                                <rect key="frame" x="33" y="85" width="271" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FQp-ex-OxC">
-                                <rect key="frame" x="59" y="282" width="203" height="30"/>
+                                <rect key="frame" x="59" y="202" width="203" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ah-Xo-FWT">
-                                <rect key="frame" x="25" y="339" width="271" height="30"/>
+                                <rect key="frame" x="25" y="240" width="271" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onFill:" destination="Yt1-Og-G1p" eventType="touchUpInside" id="lLq-q6-MQu"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Please key in the amout of fuel you want to fill" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l81-AY-JDb">
-                                <rect key="frame" x="33" y="186" width="276" height="88"/>
+                                <rect key="frame" x="28" y="106" width="276" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -96,6 +99,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ogy-Tr-eXM"/>
+                    <connections>
+                        <outlet property="quantity" destination="FQp-ex-OxC" id="FcO-uE-f5Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oko-aS-qqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +110,7 @@
         <!--Payment View Controller-->
         <scene sceneID="5gR-Dq-P5G">
             <objects>
-                <viewController id="JSa-O8-mr8" customClass="PaymentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="payment" id="JSa-O8-mr8" customClass="PaymentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="haY-th-934"/>
                         <viewControllerLayoutGuide type="bottom" id="9Wt-aZ-fXe"/>
@@ -114,25 +120,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="You have filled in XX amount of fuel. The amount payable is $40" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVM-kP-4OW">
-                                <rect key="frame" x="20" y="38" width="280" height="54"/>
+                                <rect key="frame" x="20" y="173" width="280" height="59"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Do you want to pay now?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-R3-xi1">
-                                <rect key="frame" x="20" y="100" width="280" height="34"/>
+                                <rect key="frame" x="20" y="240" width="280" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enY-YM-YHH">
-                                <rect key="frame" x="20" y="257" width="280" height="30"/>
+                                <rect key="frame" x="20" y="314" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Pay Now">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doPay:" destination="JSa-O8-mr8" eventType="touchUpInside" id="JSV-tx-v9X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -145,7 +154,7 @@
         <!--Receipt View Controller-->
         <scene sceneID="175-pJ-BEa">
             <objects>
-                <viewController id="7mX-RV-etD" customClass="ReceiptViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="receipt" id="7mX-RV-etD" customClass="ReceiptViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LLq-EX-SIO"/>
                         <viewControllerLayoutGuide type="bottom" id="GmW-89-dG4"/>
@@ -155,21 +164,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Your payment has been processed sucessfully. Thanks for your purchase &lt;User>!" translatesAutoresizingMaskIntoConstraints="NO" id="4Hd-yA-MRB">
-                                <rect key="frame" x="20" y="35" width="280" height="67"/>
+                                <rect key="frame" x="20" y="142" width="280" height="67"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="You have earned yourself a $2.00 coupon to be used in XXX store!!" translatesAutoresizingMaskIntoConstraints="NO" id="xNw-Uj-xeW">
-                                <rect key="frame" x="20" y="123" width="280" height="54"/>
+                                <rect key="frame" x="20" y="222" width="280" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vd-b0-cld">
-                                <rect key="frame" x="137" y="256" width="46" height="30"/>
+                                <rect key="frame" x="137" y="311" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Claim">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

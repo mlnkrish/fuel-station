@@ -12,7 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.detector = [[BeaconDetector alloc] init];
+    [self.detector startMonitoring];
+    
+    self.broadcaster = [[BeaconBroadcaster alloc] init];
+    [self.broadcaster startBroadcasting];
     return YES;
 }
 							

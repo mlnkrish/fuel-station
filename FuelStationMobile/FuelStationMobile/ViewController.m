@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CurrentUserHolder.h"
+
 
 
 @interface ViewController ()
@@ -15,20 +17,17 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    self.status.text = @"Hellos";
-    [CurrentViewHolder set:self];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void) beaconDetected:(CLBeacon *)beacon {
+
     if(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate) {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"fillup"];
         [[self navigationController] pushViewController:vc animated:YES];
@@ -38,6 +37,5 @@
 - (void) viewDidAppear:(BOOL)animated {
     [CurrentViewHolder set:self];
 }
-
 
 @end

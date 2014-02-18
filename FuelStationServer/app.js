@@ -1,6 +1,19 @@
 var express = require("express");
 
 var app = express();
+app.use(express.bodyParser());
+
+var users = {
+  "2046" : {
+    "name" : "Hurry Sadu"
+  },
+  "1111" : {
+    "name" : "John Bacon"
+  }
+}
+
+var topups = {};
+var payments = {};
 
 app.get('/hello.txt', function(req, res){
   var body = 'Hello World';
@@ -11,16 +24,95 @@ app.get('/hello.txt', function(req, res){
 
 
 app.get("/users/:id", function(req,res){
+  var id = req.params.id;
+  var user = users[id];
+  var body = JSON.stringify(user);
 
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Length', Buffer.byteLength(body));
+  res.end(body);
 });
 
 app.post("/users/:id/topups", function(req,res) {
+  var id = req.params.id;
+  var topup = req.body.topup;
+  var token = req.body.token;
+  console.log("post topup userID:"+id);
+  console.log("post topup tokenID:"+token);
+  console.log("post topup :"+topup);
+  console.log(" "+id+" "+topup+" "+token);
 
+  topups[token] = {"val" : topup, "valid" : true, "user": id, "token": token};
+
+  var body = '';
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Length', Buffer.byteLength(body));
+  res.end(body);
 });
 
-app.get("users/:user_id/topups/:topup_id", function(req,res) {
-  // body...
+app.post("/topups/:token_id/done", function(req,res) {
+  var token_id = req.params.token_id;
+  console.log("post token done:"+token_id);
+  topup = topups[token_id];
+  if((!!topup) && topup["token"] === token_id) {
+    topup["done"] = true;
+    var body = JSON.stringify(topup);
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Length', Buffer.byteLength(body));
+    res.end(body);
+  } else {
+    var body = JSON.stringify({"valid":false});
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Length', Buffer.byteLength(body));
+    res.end(body);
+  }
 });
+
+app.get("/topups/:token_id", function(req,res) {
+  var token_id = req.params.token_id;
+  console.log("get token:"+token_id);
+  topup = topups[token_id];
+  console.log("get token topup:"+JSON.stringify(topup));
+  if((!!topup) && topup["token"] === token_id) {
+    console.log("here!!");
+    var body = JSON.stringify(topup);
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Length', Buffer.byteLength(body));
+    res.end(body);
+  } else {
+    var body = JSON.stringify({"valid":false});
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Length', Buffer.byteLength(body));
+    res.end(body);
+  }
+});
+
+app.post("/payments/:token_id", function (req,res) {
+  var token_id = req.params.token_id;
+  payments[token_id] = {"paid" : true};
+
+  var body = '';
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Length', Buffer.byteLength(body));
+  res.end(body);
+})
+
+app.get("/payments/:token_id", function (req,res) {
+  var token_id = req.params.token_id;
+  var payment = payments[token_id]
+
+  if((!!topup) && payment["paid"]) {
+    var body = JSON.stringify(payment);
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Length', Buffer.byteLength(body));
+    res.end(body);
+  } else {
+    var body = JSON.stringify({"paid":false});
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Length', Buffer.byteLength(body));
+    res.end(body);
+  }
+})
 
 app.listen(3000);
 console.log('Listening on port 3000');

@@ -6,13 +6,29 @@
 //  Copyright (c) 2014 ThoughtWorks. All rights reserved.
 //
 
+#import <AFNetworking/AFHTTPRequestOperation.h>
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import "PaymentViewController.h"
+#import "CurrentUserHolder.h"
 
 @interface PaymentViewController ()
 
 @end
 
 @implementation PaymentViewController
+
+- (IBAction)doPay:(id)sender {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *token = [CurrentUserHolder getToken];
+    NSString *url = [NSString stringWithFormat:@"http://localhost:3000/payments/%@",token];
+
+    [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"receipt"];
+        [[self navigationController] pushViewController:vc animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
 
 - (void)viewDidLoad
 {

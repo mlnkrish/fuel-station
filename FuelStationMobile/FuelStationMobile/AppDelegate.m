@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BeaconDetector.h"
+#import "CurrentUserHolder.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,9 @@
     
     self.broadcaster = [[BeaconBroadcaster alloc] init];
     [self.broadcaster startBroadcasting];
+
+    int r = arc4random() % 9999;
+    [CurrentUserHolder setToken:[NSString stringWithFormat:@"%i", r]];
     return YES;
 }
 							
