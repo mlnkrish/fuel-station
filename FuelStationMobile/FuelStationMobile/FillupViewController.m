@@ -21,7 +21,7 @@
 - (IBAction)onFill:(id)sender {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"topup": self.quantity.text, @"token":[CurrentUserHolder getToken]};
-    [manager POST:@"http://localhost:3000/users/2046/topups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://10.4.33.53:3000/users/2046/topups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"RESPONSE JSON: %@", responseObject);
         self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
                                                        target:self
@@ -36,7 +36,7 @@
 - (void)checkForFuelFilled {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *token = [CurrentUserHolder getToken];
-    NSString *url = [NSString stringWithFormat:@"http://localhost:3000/topups/%@",token];
+    NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/topups/%@",token];
 
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"RESPONSE JSON: %@", responseObject);

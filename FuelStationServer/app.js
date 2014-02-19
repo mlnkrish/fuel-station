@@ -24,7 +24,9 @@ app.get('/hello.txt', function(req, res){
 
 
 app.get("/users/:id", function(req,res){
-  var id = req.params.id;
+
+  var id = req.params.id +"";
+  console.log("user id:" + id);
   var user = users[id];
   var body = JSON.stringify(user);
 
@@ -70,8 +72,9 @@ app.post("/topups/:token_id/done", function(req,res) {
 
 app.get("/topups/:token_id", function(req,res) {
   var token_id = req.params.token_id;
-  console.log("get token:"+token_id);
   topup = topups[token_id];
+  
+  console.log("get token:"+token_id);
   console.log("get token topup:"+JSON.stringify(topup));
   if((!!topup) && topup["token"] === token_id) {
     console.log("here!!");

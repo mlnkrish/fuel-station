@@ -18,11 +18,14 @@
     self.detector = [[BeaconDetector alloc] init];
     [self.detector startMonitoring];
     
+
+    int r = arc4random() % 9999;
+    NSString *token = [NSString stringWithFormat:@"%i", r];
+    [CurrentUserHolder setToken:token];
+
     self.broadcaster = [[BeaconBroadcaster alloc] init];
     [self.broadcaster startBroadcasting];
 
-    int r = arc4random() % 9999;
-    [CurrentUserHolder setToken:[NSString stringWithFormat:@"%i", r]];
     return YES;
 }
 							

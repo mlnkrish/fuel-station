@@ -23,7 +23,7 @@ static NSString *userToken;
     return userToken;
 }
 
-+(void) setToken:(NSNumber *)token {
++(void) setToken:(NSString *)token {
     userToken = token;
 }
 

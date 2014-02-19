@@ -34,17 +34,16 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         NSNumber *userId = beacon.major;
         NSNumber *token = beacon.minor;
-        NSString *url = [NSString stringWithFormat:@"http://localhost:3000/users/%i",userId];
-//        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"greet"];
-//        [[self navigationController] pushViewController:vc animated:YES];
-
+        NSLog(@"Userid:%@",[userId stringValue]);
+        NSLog(@"Token:%@",[token stringValue]);
+        NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/users/%@",[userId stringValue]];
 
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"RESPONSE JSON: %@", responseObject);
 
             NSString *name = (NSString *) [responseObject objectForKey:@"name"];
             [CurrentUserHolder setName:name];
-            [CurrentUserHolder setToken:token];
+            [CurrentUserHolder setToken:[token stringValue]];
 
             UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"greet"];
             [[self navigationController] pushViewController:vc animated:YES];

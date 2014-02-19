@@ -23,6 +23,11 @@
     [super viewDidLoad];
     [CurrentViewHolder set:self];
     self.Greeting.text = [NSString stringWithFormat:@"Hello, %@", [CurrentUserHolder getName]];
+    self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                   target:self
+                                                 selector:@selector(checkForFuelSet)
+                                                 userInfo:nil
+                                                  repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,11 +39,6 @@
 - (void) beaconDetected:(CLBeacon *)beacon {
     if(beacon.proximity == CLProximityImmediate) {
        NSLog(@"I got called - %@", beacon);
-       self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(checkForFuelSet)
-                                   userInfo:nil
-                                    repeats:YES];
     } else {
         [self beaconLost];
     }
@@ -47,15 +47,14 @@
 - (void) checkForFuelSet {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *token = [CurrentUserHolder getToken];
-    NSString *url = [NSString stringWithFormat:@"http://localhost:3000/topups/%@",token];
+    NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/topups/%@",token];
 
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"RESPONSE JSON: %@", responseObject);
 
-        NSString *valid = (NSString *) [responseObject objectForKey:@"valid"];
-        if(valid == @"true") {
+        if([[responseObject objectForKey:@"valid"]boolValue]) {
             [self.timer invalidate];
-            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"greet"];
+            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"fillup"];
             [[self navigationController] pushViewController:vc animated:YES];
         }
     }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
