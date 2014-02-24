@@ -30,6 +30,14 @@
 		0BC535CF18AB873300611944 /* BeaconAwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535CE18AB873300611944 /* BeaconAwareViewController.m */; };
 		0BC535D218AB8C9600611944 /* GreetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC535D118AB8C9600611944 /* GreetingsViewController.m */; };
 		0BC8789918ADDAF2004B51DD /* FillupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8789818ADDAF2004B51DD /* FillupViewController.m */; };
+		95BB85AA18BB787200BBFB98 /* ipad-bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85A918BB787200BBFB98 /* ipad-bg@2x.jpg */; };
+		95BB85AC18BB787900BBFB98 /* ipad-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85AB18BB787900BBFB98 /* ipad-bg.jpg */; };
+		95BB85B318BB7B8A00BBFB98 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85AD18BB7B8A00BBFB98 /* redButton.png */; };
+		95BB85B418BB7B8A00BBFB98 /* redButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85AE18BB7B8A00BBFB98 /* redButton@2x.png */; };
+		95BB85B518BB7B8A00BBFB98 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85AF18BB7B8A00BBFB98 /* greenButton.png */; };
+		95BB85B618BB7B8A00BBFB98 /* greenButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85B018BB7B8A00BBFB98 /* greenButton@2x.png */; };
+		95BB85B718BB7B8A00BBFB98 /* oil.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85B118BB7B8A00BBFB98 /* oil.png */; };
+		95BB85B818BB7B8A00BBFB98 /* oil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BB85B218BB7B8A00BBFB98 /* oil@2x.png */; };
 		9AC9BE1394D94B6986DFE50F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 562FED90E0804B19907A03B4 /* libPods.a */; };
 		B730E134CBAB25C042A783EC /* CurrentUserHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B730E48487F6CC9752CDBC27 /* CurrentUserHolder.m */; };
 /* End PBXBuildFile section */
@@ -82,6 +90,14 @@
 		0BC8789818ADDAF2004B51DD /* FillupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillupViewController.m; sourceTree = "<group>"; };
 		562FED90E0804B19907A03B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BE967D2C874499AFF4AA5F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		95BB85A918BB787200BBFB98 /* ipad-bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ipad-bg@2x.jpg"; sourceTree = "<group>"; };
+		95BB85AB18BB787900BBFB98 /* ipad-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ipad-bg.jpg"; sourceTree = "<group>"; };
+		95BB85AD18BB7B8A00BBFB98 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
+		95BB85AE18BB7B8A00BBFB98 /* redButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redButton@2x.png"; sourceTree = "<group>"; };
+		95BB85AF18BB7B8A00BBFB98 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		95BB85B018BB7B8A00BBFB98 /* greenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButton@2x.png"; sourceTree = "<group>"; };
+		95BB85B118BB7B8A00BBFB98 /* oil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oil.png; sourceTree = "<group>"; };
+		95BB85B218BB7B8A00BBFB98 /* oil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oil@2x.png"; sourceTree = "<group>"; };
 		B730E48487F6CC9752CDBC27 /* CurrentUserHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserHolder.m; sourceTree = "<group>"; };
 		B730EA79FAF335A7C21A06B0 /* CurrentUserHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserHolder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +166,7 @@
 		0B72D4D318A8A7E4001D818E /* FuelStationConsole */ = {
 			isa = PBXGroup;
 			children = (
+				95BB85B918BB7B9600BBFB98 /* Images */,
 				0BC535C018AB865600611944 /* Helpers */,
 				0B72D4DC18A8A7E4001D818E /* AppDelegate.h */,
 				0B72D4DD18A8A7E4001D818E /* AppDelegate.m */,
@@ -228,6 +245,21 @@
 				B730EA79FAF335A7C21A06B0 /* CurrentUserHolder.h */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		95BB85B918BB7B9600BBFB98 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				95BB85A918BB787200BBFB98 /* ipad-bg@2x.jpg */,
+				95BB85AB18BB787900BBFB98 /* ipad-bg.jpg */,
+				95BB85AD18BB7B8A00BBFB98 /* redButton.png */,
+				95BB85AE18BB7B8A00BBFB98 /* redButton@2x.png */,
+				95BB85AF18BB7B8A00BBFB98 /* greenButton.png */,
+				95BB85B018BB7B8A00BBFB98 /* greenButton@2x.png */,
+				95BB85B118BB7B8A00BBFB98 /* oil.png */,
+				95BB85B218BB7B8A00BBFB98 /* oil@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,9 +343,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BB85AA18BB787200BBFB98 /* ipad-bg@2x.jpg in Resources */,
+				95BB85B618BB7B8A00BBFB98 /* greenButton@2x.png in Resources */,
 				0B72D4E618A8A7E4001D818E /* Images.xcassets in Resources */,
+				95BB85AC18BB787900BBFB98 /* ipad-bg.jpg in Resources */,
+				95BB85B818BB7B8A00BBFB98 /* oil@2x.png in Resources */,
+				95BB85B718BB7B8A00BBFB98 /* oil.png in Resources */,
 				0B72D4D818A8A7E4001D818E /* InfoPlist.strings in Resources */,
 				0B72D4E118A8A7E4001D818E /* Main.storyboard in Resources */,
+				95BB85B418BB7B8A00BBFB98 /* redButton@2x.png in Resources */,
+				95BB85B318BB7B8A00BBFB98 /* redButton.png in Resources */,
+				95BB85B518BB7B8A00BBFB98 /* greenButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
