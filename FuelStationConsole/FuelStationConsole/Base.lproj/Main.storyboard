@@ -12,7 +12,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wJ9-ac-b2W"/>
+                        <segue destination="f9m-K7-oBF" kind="relationship" relationship="rootViewController" id="Bea-2j-FYQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65j-1R-osT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,6 +67,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aMy-d4-Yed"/>
                     <connections>
                         <outlet property="Greeting" destination="nn6-6D-ra5" id="D8M-3z-k0g"/>
                     </connections>
@@ -106,6 +107,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8AG-FN-uPJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Uf-yW-2Wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

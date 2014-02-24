@@ -50,13 +50,11 @@
     }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [CurrentViewHolder set:self];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 }
 
 - (void)didReceiveMemoryWarning {

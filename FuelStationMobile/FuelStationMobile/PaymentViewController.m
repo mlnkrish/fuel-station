@@ -17,11 +17,11 @@
 
 @implementation PaymentViewController
 
-- (IBAction)doPay:(id)sender {
+- (IBAction)doPayNow:(id)sender {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *token = [CurrentUserHolder getToken];
     NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/payments/%@",token];
-
+    
     [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"receipt"];
         [[self navigationController] pushViewController:vc animated:YES];
@@ -29,6 +29,7 @@
         NSLog(@"Error: %@", error);
     }];
 }
+
 
 - (void)viewDidLoad
 {
