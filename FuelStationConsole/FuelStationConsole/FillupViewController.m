@@ -13,48 +13,44 @@
 
 @interface FillupViewController ()
 @property NSTimer *timer;
+@property BOOL checking;
 @end
 
 @implementation FillupViewController
 
-- (IBAction)doFillup:(id)sender {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *token = [CurrentUserHolder getToken];
-    NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/topups/%@/done",token];
 
-    [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                       target:self
-                                                     selector:@selector(checkForPaymentMade)
-                                                     userInfo:nil
-                                                      repeats:YES];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.checking = NO;
+    self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                   target:self
+                                                 selector:@selector(checkForPaymentMade)
+                                                 userInfo:nil
+                                                  repeats:YES];
+
 }
 
 - (void)checkForPaymentMade {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *token = [CurrentUserHolder getToken];
-    NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/payments/%@",token];
+    if(!self.checking) {
+        self.checking = YES;
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        NSString *token = [CurrentUserHolder getToken];
+        NSString *url = [NSString stringWithFormat:@"http://fuel-station.herokuapp.com/payments/%@",token];
 
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"RESPONSE JSON: %@", responseObject);
-
-        if([[responseObject objectForKey:@"paid"] boolValue]) {
-            [self.timer invalidate];
-            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"thanks"];
-            [[self navigationController] pushViewController:vc animated:YES];
-        }
-    }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"RESPONSE JSON: %@", responseObject);
+            if([[responseObject objectForKey:@"paid"] boolValue]) {
+                [self.timer invalidate];
+                UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"thanks"];
+                [[self navigationController] pushViewController:vc animated:YES];
+            } else {
+                self.checking = NO;
+            }
+        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            self.checking = NO;
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning

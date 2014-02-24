@@ -12,6 +12,4 @@
 #import "CurrentUserHolder.h"
 
 @interface GreetingsViewController : BeaconAwareViewController
-@property (weak, nonatomic) IBOutlet UILabel *Greeting;
-
 @end

@@ -11,17 +11,15 @@
 #import "CurrentUserHolder.h"
 
 @interface ViewController ()
-
-
-
+@property BOOL checking;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[CurrentViewHolder set:self];
+    self.checking = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,27 +28,33 @@
 }
 
 - (void) beaconDetected:(CLBeacon *)beacon {
-    if(beacon.proximity == CLProximityImmediate) {
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        NSNumber *userId = beacon.major;
-        NSNumber *token = beacon.minor;
-        NSLog(@"Userid:%@",[userId stringValue]);
-        NSLog(@"Token:%@",[token stringValue]);
-        NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/users/%@",[userId stringValue]];
+    if(!self.checking) {
+        self.checking = YES;
+        if(beacon.proximity == CLProximityImmediate) {
+            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+            NSNumber *userId = beacon.major;
+            NSNumber *token = beacon.minor;
+            NSLog(@"Userid:%@",[userId stringValue]);
+            NSLog(@"Token:%@",[token stringValue]);
+            NSString *url = [NSString stringWithFormat:@"http://fuel-station.herokuapp.com/users/%@",[userId stringValue]];
 
-        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"RESPONSE JSON: %@", responseObject);
+            [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSLog(@"RESPONSE JSON: %@", responseObject);
 
-            NSString *name = (NSString *) [responseObject objectForKey:@"name"];
-            [CurrentUserHolder setName:name];
-            [CurrentUserHolder setToken:[token stringValue]];
+                NSString *name = (NSString *) [responseObject objectForKey:@"name"];
+                [CurrentUserHolder setName:name];
+                [CurrentUserHolder setToken:[token stringValue]];
 
-            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"greet"];
-            [[self navigationController] pushViewController:vc animated:YES];
+                UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"greet"];
+                [[self navigationController] pushViewController:vc animated:YES];
 
-        }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
+            }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"Error: %@", error);
+                self.checking = NO;
+            }];
+        } else {
+         self.checking = NO;
+        }
     }
 }
 

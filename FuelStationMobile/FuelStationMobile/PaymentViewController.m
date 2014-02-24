@@ -17,11 +17,11 @@
 
 @implementation PaymentViewController
 
-- (IBAction)doPayNow:(id)sender {
+- (IBAction)payNow:(id)sender {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *token = [CurrentUserHolder getToken];
-    NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/payments/%@",token];
-    
+    NSString *url = [NSString stringWithFormat:@"http://fuel-station.herokuapp.com/payments/%@",token];
+
     [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"receipt"];
         [[self navigationController] pushViewController:vc animated:YES];
@@ -31,8 +31,7 @@
 }
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	[CurrentViewHolder set:self];
 }

@@ -141,6 +141,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doPayNow:" destination="JSa-O8-mr8" eventType="touchUpInside" id="Mw2-e0-M4L"/>
+                                    <action selector="payNow:" destination="JSa-O8-mr8" eventType="touchUpInside" id="IGx-eA-Wf4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oil.png" translatesAutoresizingMaskIntoConstraints="NO" id="IzJ-lD-vqc">

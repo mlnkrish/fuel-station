@@ -14,52 +14,48 @@
 @interface FillupViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *quantity;
 @property NSTimer *timer;
+@property BOOL checking;
 @end
 
 @implementation FillupViewController
 
-- (IBAction)onFill:(id)sender {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"topup": self.quantity.text, @"token":[CurrentUserHolder getToken]};
-    [manager POST:@"http://10.4.33.53:3000/users/2046/topups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"RESPONSE JSON: %@", responseObject);
-        self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                       target:self
-                                                     selector:@selector(checkForFuelFilled)
-                                                     userInfo:nil
-                                                      repeats:YES];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-   }
-
-- (void)checkForFuelFilled {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *token = [CurrentUserHolder getToken];
-    NSString *url = [NSString stringWithFormat:@"http://10.4.33.53:3000/topups/%@",token];
-
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"RESPONSE JSON: %@", responseObject);
-
-        if([[responseObject objectForKey:@"valid"] boolValue] && [[responseObject objectForKey:@"done"] boolValue]) {
-
-            [self.timer invalidate];
-            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"payment"];
-            [[self navigationController] pushViewController:vc animated:YES];
-        }
-    }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [CurrentViewHolder set:self];
+    self.checking = NO;
+    self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                   target:self
+                                                 selector:@selector(checkForFuelFilled)
+                                                 userInfo:nil
+                                                  repeats:YES];
+}
+
+- (void)checkForFuelFilled {
+    if(!self.checking)
+    {
+        self.checking = YES;
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        NSString *token = [CurrentUserHolder getToken];
+        NSString *url = [NSString stringWithFormat:@"http://fuel-station.herokuapp.com/topups/%@",token];
+
+        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"RESPONSE JSON: %@", responseObject);
+            if([[responseObject objectForKey:@"valid"] boolValue]) {
+                [self.timer invalidate];
+                UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"payment"];
+                [[self navigationController] pushViewController:vc animated:YES];
+            } else {
+                self.checking = NO;
+            }
+        }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            self.checking = NO;
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) beaconDetected:(CLBeacon *)beacon {

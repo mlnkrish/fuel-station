@@ -10,7 +10,7 @@
 
 + (NSString *) getName;
 + (void) setName:(NSString *)name;
-+ (NSNumber *) getToken;
-+ (void) setToken:(NSNumber *)token;
++ (NSString *) getToken;
++ (void) setToken:(NSString *)token;
 
 @end
