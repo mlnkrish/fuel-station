@@ -53,9 +53,8 @@
     
 }
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    NSLog(@"Ranged a bunch of beacons %@", region);
-    NSLog(@"Count : %i", [beacons count]);
-    
+//    NSLog(@"Ranged a bunch of beacons %@", region);
+//    NSLog(@"Count : %i", [beacons count]);
     if ([beacons count] > 0) {
         CLBeacon *closestBeacon = [beacons objectAtIndex:0];
         BeaconAwareViewController *current =[CurrentViewHolder get];

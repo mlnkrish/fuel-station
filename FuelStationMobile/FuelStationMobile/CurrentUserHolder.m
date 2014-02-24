@@ -10,6 +10,7 @@
 
 static NSString *userName;
 static NSString *userToken;
+static NSString *fuel;
 
 + (NSString *) getName {
     return userName;
@@ -25,6 +26,14 @@ static NSString *userToken;
 
 +(void) setToken:(NSString *)token {
     userToken = token;
+}
+
++ (NSString *) getFuel {
+    return fuel;
+}
+
++(void) setFuel:(NSString *)fuelAmt {
+    fuel = fuelAmt;
 }
 
 @end

@@ -115,7 +115,6 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="Greeting" destination="nn6-6D-ra5" id="D8M-3z-k0g"/>
                         <outlet property="fillValue" destination="GkH-vU-Mfy" id="Jww-VL-2fr"/>
                         <outlet property="greetText" destination="bJ3-7x-I60" id="HEY-7v-nVz"/>
                     </connections>
@@ -161,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="-98"/>
         </scene>
-        <!--View Controller-->
+        <!--Thanks View Controller-->
         <scene sceneID="48s-Yl-GoZ">
             <objects>
-                <viewController storyboardIdentifier="thanks" id="gXx-5p-RsT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="thanks" id="gXx-5p-RsT" customClass="ThanksViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2O3-a8-2BV"/>
                         <viewControllerLayoutGuide type="bottom" id="dbr-ou-dyn"/>

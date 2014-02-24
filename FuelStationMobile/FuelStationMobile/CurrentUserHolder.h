@@ -12,5 +12,7 @@
 + (void) setName:(NSString *)name;
 + (NSString *) getToken;
 + (void) setToken:(NSString *)token;
++ (NSString *) getFuel;
++ (void) setFuel:(NSString *)token;
 
 @end

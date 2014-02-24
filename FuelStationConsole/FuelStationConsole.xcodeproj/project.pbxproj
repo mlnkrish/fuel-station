@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0928A718BBB08200EC0BA8 /* ThanksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0928A618BBB08200EC0BA8 /* ThanksViewController.m */; };
 		0B72D4CE18A8A7E4001D818E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72D4CD18A8A7E4001D818E /* Foundation.framework */; };
 		0B72D4D018A8A7E4001D818E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72D4CF18A8A7E4001D818E /* CoreGraphics.framework */; };
 		0B72D4D218A8A7E4001D818E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72D4D118A8A7E4001D818E /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0928A518BBB08200EC0BA8 /* ThanksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThanksViewController.h; sourceTree = "<group>"; };
+		0B0928A618BBB08200EC0BA8 /* ThanksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThanksViewController.m; sourceTree = "<group>"; };
 		0B72D4CA18A8A7E4001D818E /* FuelStationConsole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuelStationConsole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B72D4CD18A8A7E4001D818E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0B72D4CF18A8A7E4001D818E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -218,6 +221,8 @@
 				0BC535D118AB8C9600611944 /* GreetingsViewController.m */,
 				0BC8789718ADDAF2004B51DD /* FillupViewController.h */,
 				0BC8789818ADDAF2004B51DD /* FillupViewController.m */,
+				0B0928A518BBB08200EC0BA8 /* ThanksViewController.h */,
+				0B0928A618BBB08200EC0BA8 /* ThanksViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B72D4E418A8A7E4001D818E /* ViewController.m in Sources */,
+				0B0928A718BBB08200EC0BA8 /* ThanksViewController.m in Sources */,
 				0BC535C618AB86A700611944 /* BeaconBroadcaster.m in Sources */,
 				0BC535C918AB86B900611944 /* CurrentViewHolder.m in Sources */,
 				0BC535D218AB8C9600611944 /* GreetingsViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "AFHTTPRequestOperation.h"
 #import "CurrentUserHolder.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "CurrentViewHolder.h"
 
 @interface FillupViewController ()
 @property NSTimer *timer;
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [CurrentViewHolder set:self];
     self.checking = NO;
     self.timer =  [NSTimer scheduledTimerWithTimeInterval:2.0
                                                    target:self
@@ -50,6 +52,8 @@
             NSLog(@"Error: %@", error);
             self.checking = NO;
         }];
+
+
     }
 }
 
@@ -57,6 +61,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) beaconLost {
+    [[[CurrentViewHolder get] navigationController] popToRootViewControllerAnimated:false];
 }
 
 @end

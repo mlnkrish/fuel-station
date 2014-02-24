@@ -30,7 +30,7 @@
 - (void) beaconDetected:(CLBeacon *)beacon {
     if(!self.checking) {
         self.checking = YES;
-        if(beacon.proximity == CLProximityImmediate) {
+        if(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate) {
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             NSNumber *userId = beacon.major;
             NSNumber *token = beacon.minor;
@@ -60,5 +60,6 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [CurrentViewHolder set:self];
+    self.checking = NO;
 }
 @end

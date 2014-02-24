@@ -22,7 +22,7 @@
     int r = arc4random() % 9999;
     NSString *token = [NSString stringWithFormat:@"%i", r];
     [CurrentUserHolder setToken:token];
-
+    NSLog(@"TOKEN : %@", token);
     self.broadcaster = [[BeaconBroadcaster alloc] init];
     [self.broadcaster startBroadcasting];
 
@@ -37,6 +37,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [self.broadcaster stopBroadcasting];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -45,6 +46,9 @@
     int r = arc4random() % 9999;
     NSString *token = [NSString stringWithFormat:@"%i", r];
     [CurrentUserHolder setToken:token];
+    NSLog(@"TOKEN : %@", token);
+    [self.broadcaster startBroadcasting];
+    [[[CurrentViewHolder get] navigationController] popToRootViewControllerAnimated:false];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

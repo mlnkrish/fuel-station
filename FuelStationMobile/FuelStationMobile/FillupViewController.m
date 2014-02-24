@@ -37,11 +37,13 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         NSString *token = [CurrentUserHolder getToken];
         NSString *url = [NSString stringWithFormat:@"http://fuel-station.herokuapp.com/topups/%@",token];
-
+        NSLog(@"URL: %@",url);
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"RESPONSE JSON: %@", responseObject);
             if([[responseObject objectForKey:@"valid"] boolValue]) {
                 [self.timer invalidate];
+                NSString *value = (NSString *) [responseObject objectForKey:@"val"];
+                [CurrentUserHolder setFuel:value];
                 UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"payment"];
                 [[self navigationController] pushViewController:vc animated:YES];
             } else {

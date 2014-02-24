@@ -42,8 +42,8 @@
 }
 
 - (void) beaconDetected:(CLBeacon *)beacon {
-    if(beacon.proximity == CLProximityImmediate) {
-       NSLog(@"I got called - %@", beacon);
+    if(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate) {
+//       NSLog(@"I got called - %@", beacon);
     } else {
         [self beaconLost];
     }

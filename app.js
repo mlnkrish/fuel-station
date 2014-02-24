@@ -82,7 +82,7 @@ app.get("/payments/:token_id", function (req,res) {
   var token_id = req.params.token_id;
   var payment = payments[token_id]
 
-  if((!!topup) && payment["paid"]) {
+  if((!!payment) && payment["paid"]) {
     var body = JSON.stringify(payment);
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Content-Length', Buffer.byteLength(body));

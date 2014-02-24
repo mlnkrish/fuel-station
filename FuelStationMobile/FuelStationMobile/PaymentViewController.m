@@ -12,6 +12,7 @@
 #import "CurrentUserHolder.h"
 
 @interface PaymentViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *display;
 
 @end
 
@@ -34,10 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[CurrentViewHolder set:self];
+    NSString *fuel = [CurrentUserHolder getFuel];
+    self.display.text = [NSString stringWithFormat:@"You have filled %@ ltrs of fuel",fuel];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
