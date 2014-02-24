@@ -14,6 +14,7 @@
 
 @interface ViewController : BeaconAwareViewController<CLLocationManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *status;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfLitresLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *bckgScrollView;
 
 @end
