@@ -35,7 +35,7 @@
             NSLog(@"Starting to broadcast");
             NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"E734A671-69AE-4080-AE5E-121616E34742"];
             self.ad = [[BeaconAdvertisementData alloc] initWithProximityUUID:uuid
-                                                                        major:2046
+                                                                        major:1111
                                                                         minor:[[CurrentUserHolder getToken] intValue]
                                                                 measuredPower:-58];
             

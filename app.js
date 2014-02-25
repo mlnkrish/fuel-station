@@ -5,10 +5,10 @@ app.use(express.bodyParser());
 
 var users = {
   "2046" : {
-    "name" : "Hurry Sadu"
+    "name" : "Negin"
   },
   "1111" : {
-    "name" : "John Bacon"
+    "name" : "Bettina"
   }
 }
 

@@ -63,6 +63,7 @@
 - (void) beaconDetected:(CLBeacon *)beacon {
     if(!(beacon.proximity == CLProximityNear || beacon.proximity == CLProximityImmediate)) {
         NSLog(@"I got called - %@", beacon);
+        [[self navigationController] popViewControllerAnimated:YES];
     }
 }
 
